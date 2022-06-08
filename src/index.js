@@ -2,6 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import CommentDetail from "./components/CommentDetail";
+import ClassCountUp from "./components/ClassCountUp";
 // function getButtonText() {
 //   return "Click on me!";
 // }
@@ -22,6 +23,7 @@ const App = function() {
         <CommentDetail author="Alex" />
         <CommentDetail author="Jane" />
       </div>
+      <ClassCountUp />
     </div>
   );
 };
