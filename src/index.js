@@ -23,7 +23,7 @@ const App = function() {
         <CommentDetail author="Alex" />
         <CommentDetail author="Jane" />
       </div>
-      <ClassCountUp />
+      <ClassCountUp targetNum="5000" />
     </div>
   );
 };

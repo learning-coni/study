@@ -38,34 +38,6 @@ class Timer extends React.Component {
         clearInterval(myInterval);
       }
     }, frameDuration);
-
-    //   const animationDuration = 3000;
-
-    //   const frameDuration = 1000 / 60;
-
-    //   const totalFrames = Math.round(animationDuration / frameDuration);
-
-    //   const easeOutQuad = (t) => t * (2 - t);
-
-    //   let frame = 0;
-    //   // const countTo = state.toNum;
-    //   const countTo = 3000;
-
-    //   const counter = setInterval(() => {
-    //     frame++;
-
-    //     const progress = easeOutQuad(frame / totalFrames);
-
-    //     const currentCount = Math.round(countTo * progress);
-
-    //     // if (countTo !== currentCount) {
-    //     //   el.innerHTML = currentCount;
-    //     // }
-
-    //     if (frame === totalFrames) {
-    //       clearInterval(counter);
-    //     }
-    //   }, frameDuration);
   }
   z;
 
@@ -73,11 +45,6 @@ class Timer extends React.Component {
     const { currentCount } = this.state;
     return (
       <>
-        {/* {minutes === 0 && seconds === 0 ? null : (
-          <h1>
-            {minutes} : {seconds < 10 ? `0${seconds}` : seconds}
-          </h1>
-        )} */}
         <p>{currentCount}</p>
       </>
     );
@@ -85,8 +52,13 @@ class Timer extends React.Component {
 }
 
 class ClassCountUp extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.targetNum = this.props.targetNum;
+  }
   render() {
-    return <Timer initialMinute={2} initialSeconds={11} />;
+    return <Timer toNum={this.targetNum} />;
   }
 }
 
