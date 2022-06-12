@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import CommentDetail from "./components/CommentDetail";
 import ClassCountUp from "./components/ClassCountUp";
+import faker from "faker";
 // function getButtonText() {
 //   return "Click on me!";
 // }
@@ -19,9 +20,24 @@ const App = function() {
       <input id="name" type="text" />
       <button style={style}>{buttonText.text}</button>
       <div className="ui container comments">
-        <CommentDetail author="Sam" />
-        <CommentDetail author="Alex" />
-        <CommentDetail author="Jane" />
+        <CommentDetail
+          author="Sam"
+          timeAgo="Today at 4:45PM"
+          comment="I'm Sam"
+          avatar={faker.image.avatar()}
+        />
+        <CommentDetail
+          author="Alex"
+          timeAgo="Today at 2:00AM"
+          comment="I'm Alex"
+          avatar={faker.image.avatar()}
+        />
+        <CommentDetail
+          author="Jane"
+          timeAgo="Yesterday at 5:00PM"
+          comment="Hi, I'm Jane"
+          avatar={faker.image.avatar()}
+        />
       </div>
       <ClassCountUp targetNum="5000" />
     </div>
