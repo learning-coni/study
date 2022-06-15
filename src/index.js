@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import CommentDetail from "./components/CommentDetail";
 import ClassCountUp from "./components/ClassCountUp";
+import ApprovalCard from "./components/ApprovalCard";
 // function getButtonText() {
 //   return "Click on me!";
 // }
@@ -19,7 +20,9 @@ const App = function() {
       <input id="name" type="text" />
       <button style={style}>{buttonText.text}</button>
       <div className="ui container comments">
-        <CommentDetail author="Sam" />
+        <ApprovalCard>
+          <CommentDetail author="Sam" />
+        </ApprovalCard>
         <CommentDetail author="Alex" />
         <CommentDetail author="Jane" />
       </div>
