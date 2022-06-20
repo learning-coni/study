@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Counter from "./pages/Counter";
+import List from "./pages/List";
 // function getButtonText() {
 //   return "Click on me!";
 // }
@@ -18,11 +19,13 @@ const App = function() {
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/counter">Counter</Link>
+        <Link to="/list">List</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/counter" element={<Counter />} />
+        <Route path="/list" element={<List />} />
       </Routes>
     </div>
   );
