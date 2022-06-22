@@ -1,5 +1,5 @@
 import React from "react";
-// import ScrollLoading2 from "../components/ScrollLoading2";
+import ScrollLoading2 from "../components/ScrollLoading2";
 
 const User = ({ userData }) => {
   return (
@@ -33,7 +33,9 @@ const userList = () => {
           ))}
         </tbody>
       </table>
-      <div>{/* <ScrollLoading2 /> */}</div>
+      <div>
+        <ScrollLoading2 />
+      </div>
     </div>
   );
 };
