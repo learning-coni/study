@@ -1,4 +1,5 @@
 import React from "react";
+// import ScrollLoading2 from "../components/ScrollLoading2";
 
 const User = ({ userData }) => {
   return (
@@ -18,19 +19,22 @@ const userList = () => {
   ];
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>이메일</th>
-          <th>사용자</th>
-        </tr>
-      </thead>
-      <tbody>
-        {users.map((user) => (
-          <User userData={user} />
-        ))}
-      </tbody>
-    </table>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>이메일</th>
+            <th>사용자</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <User userData={user} />
+          ))}
+        </tbody>
+      </table>
+      <div>{/* <ScrollLoading2 /> */}</div>
+    </div>
   );
 };
 
