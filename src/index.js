@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Counter from "./pages/Counter";
 import List from "./pages/List";
+import Script from "./pages/Script";
 // function getButtonText() {
 //   return "Click on me!";
 // }
@@ -20,12 +21,14 @@ const App = function() {
         <Link to="/about">About</Link>
         <Link to="/counter">Counter</Link>
         <Link to="/list">List</Link>
+        <Link to="/script">Script</Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/list" element={<List />} />
+        <Route path="/script" element={<Script />} />
       </Routes>
     </div>
   );
