@@ -12,7 +12,7 @@ class GetLocation extends React.Component {
     );
   }
 
-  render() {
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage}</div>;
     }
@@ -21,7 +21,11 @@ class GetLocation extends React.Component {
       return <SeasonDisplay lat={this.state.lat} />;
     }
 
-    return <LoadingScreen />;
+    return <LoadingScreen message="Please accept location request" />;
+  }
+
+  render() {
+    return <div className="border red">{this.renderContent()}</div>;
   }
 }
 
