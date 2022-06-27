@@ -8,31 +8,43 @@ import About from "./pages/About";
 import Counter from "./pages/Counter";
 import List from "./pages/List";
 import Script from "./pages/Script";
+import Form from "./pages/Form";
 // function getButtonText() {
 //   return "Click on me!";
 // }
 
 // Create a react component
-const App = function() {
-  return (
-    <div>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/counter">Counter</Link>
-        <Link to="/list">List</Link>
-        <Link to="/script">Script</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/list" element={<List />} />
-        <Route path="/script" element={<Script />} />
-      </Routes>
-    </div>
-  );
-};
+class App extends React.Component {
+  onSearchSubmit(term) {
+    console.log(term);
+  }
+
+  render() {
+    return (
+      <div>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/counter">Counter</Link>
+          <Link to="/list">List</Link>
+          <Link to="/script">Script</Link>
+          <Link to="/form">Form</Link>
+        </nav>
+        <div>
+          <Form onSubmitIt={this.onSearchSubmit} />
+        </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/counter" element={<Counter />} />
+          <Route path="/list" element={<List />} />
+          <Route path="/script" element={<Script />} />
+          <Route path="/form" element={<Form />} />
+        </Routes>
+      </div>
+    );
+  }
+}
 
 // Take the react component and show it on the screen
 // React 18
