@@ -1,34 +1,26 @@
 import React from "react";
+import unsplash from "../api/unsplash";
+import SearchBar from "../components/Form";
 
-class SearchBar extends React.Component {
-  state = { term: "" };
+class Form extends React.Component {
+  state = { images: [] };
 
-  // onFormSubmit(e) {
-  //   e.preventDefault();
-  //   console.log(this.state.term);
-  // }
+  onSearchSubmit = async (term) => {
+    const response = await unsplash.get("/search/photos", {
+      params: { query: term },
+    });
 
-  onFormSubmit = (e) => {
-    e.preventDefault();
-    this.props.onSubmitIt(this.state.term);
+    this.setState({ images: response.data.results });
   };
 
   render() {
     return (
-      <div className="ui segment">
-        <form onSubmit={this.onFormSubmit} className="ui form">
-          <div className="field">
-            <label>Image Search</label>
-            <input
-              type="text"
-              value={this.state.term}
-              onChange={(e) => this.setState({ term: e.target.value })}
-            />
-          </div>
-        </form>
+      <div className="ui container" style={{ marginTop: "10px" }}>
+        <SearchBar onSubmitIt={this.onSearchSubmit} />
+        Found: {this.state.images.length} images
       </div>
     );
   }
 }
 
-export default SearchBar;
+export default Form;

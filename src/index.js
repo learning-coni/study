@@ -9,6 +9,7 @@ import Counter from "./pages/Counter";
 import List from "./pages/List";
 import Script from "./pages/Script";
 import Form from "./pages/Form";
+
 // function getButtonText() {
 //   return "Click on me!";
 // }
@@ -30,9 +31,7 @@ class App extends React.Component {
           <Link to="/script">Script</Link>
           <Link to="/form">Form</Link>
         </nav>
-        <div>
-          <Form onSubmitIt={this.onSearchSubmit} />
-        </div>
+        <div></div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
